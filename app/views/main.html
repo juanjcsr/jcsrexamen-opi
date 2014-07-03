@@ -1,21 +1,15 @@
-<div class="jumbotron">
-  <h1>'Allo, 'Allo!</h1>
-  <p class="lead">
-    <img src="images/yeoman.png" alt="I'm Yeoman"><br>
-    Always a pleasure scaffolding your apps.
-  </p>
-  <p><a class="btn btn-lg btn-success" ng-href="#">Splendid!<span class="glyphicon glyphicon-ok"></span></a></p>
+<div class="jumbotron" ng-show="!CurrentUser.rol">
+  <div class="row marketing">
+    <form name="usuarioLogin" ng-submit="login(CurrentUser)" novalidate>
+      <label for="username"></label>
+      <input type="text" name="username" placeholder="Nombre de usuario" ng-model="CurrentUser.username">
+
+      <label for="password"></label>
+      <input type="text" name="password" placeholder="Password" ng-model="CurrentUser.password">
+
+      <button type="submit" class="btn btn-lg btn-success">Iniciar Sesion</button>
+
+    </form>
 </div>
 
-<div class="row marketing" ng-show="!authenticated">
-  <form name="usuarioLogin" ng-submit="login(CurrentUser)" novalidate>
-    <label for="username"></label>
-    <input type="text" name="username" placeholder="Nombre de usuario" ng-model="CurrentUser.username">
 
-    <label for="password"></label>
-    <input type="text" name="password" placeholder="Password" ng-model="CurrentUser.password">
-
-    <button type="submit">Iniciar Sesion</button>
-
-  </form>
-</div>

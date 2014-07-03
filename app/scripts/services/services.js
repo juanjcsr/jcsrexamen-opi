@@ -12,6 +12,12 @@
       });
     }]);
 
+  /*ActivityArray permite tener la vista de actividades*/
+  examenServicios.factory('ActivityArray', function() {
+    return {
+      actividades: []
+    };
+  });
   examenServicios.factory('CurrentUser', function() {
     return {
       username: '',

@@ -1,0 +1,16 @@
+<section>
+      <ul class="nav nav-pills">
+        <li ng-class="{active:tab.isSet(1)}">
+          <a href ng-click="tab.setTab(1)">Ubicacioon</a>
+        </li>
+        <li ng-class="{active:tab.isSet(2)}">
+          <a href ng-click="tab.setTab(2)">Actividades</a>
+        </li>
+      </ul>
+      <div ng-show='tab.isSet(1)'>
+        {{municipio.ubicacion}}
+      </div>
+      <div ng-show='tab.isSet(2)'>
+        <actividades-tab></actividades-tab>
+      </div>
+    </section>

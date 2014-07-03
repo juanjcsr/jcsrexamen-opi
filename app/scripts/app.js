@@ -8,12 +8,12 @@
    *
    * Main module of the application.
    */
-  angular.module('examenApp', ['ngResource', 'ngRoute','examenAppControllers', 'examenServicios'])
+  angular.module('examenApp', ['ngResource', 'ngRoute','examenAppControllers', 'examenServicios', 'examenDirectives'])
     .config(function($routeProvider) {
       $routeProvider
         .when('/', {
-          templateUrl: 'views/main.html',
-          controller: 'MainCtrl'
+          //templateUrl: 'views/main.html',
+          //controller: 'MainCtrl'
         })
         .otherwise({
           redirectTo: '/'

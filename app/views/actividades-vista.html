@@ -1,0 +1,39 @@
+<ul>
+  <h4>Actividades</h4>
+  <li ng-repeat="actividad in municipio.actividades">
+    <div class="actividad-container">
+      <input type="checkbox" ng-model="actividad.estado" ng-true-value="AUTORIZADO" ng-false-value="PROCESO" ng-show="CurrentUser.rol=='autorizador'">
+      <span>{{actividad.descripcion}} <em class="pull-right">{{actividad.monto | currency}}</em></span>
+      <strong>{{actividad.estado}}</strong>
+    </div>
+  </li>
+</ul>
+<form name="actividadesForm" ng-submit="submitActividad(municipio)" ng-show="CurrentUser.rol=='capturista'">
+  <h4>Agrega una actividad</h4>
+  <fieldset class="form-group">
+    <textarea placeholder="Descripcion de actividad" ng-model="newActividad.descripcion"></textarea>
+  </fieldset>
+  <fieldset class="form-group">
+    <input ng-model="newActividad.monto" type="number" placeholder="monto"></input>
+  </fieldset>
+  <fieldset class="form-group">
+    <select ng-model="newActividad.estado" ng-options="estado for estado in ['PROCESO','AUTORIZADO']">
+      <option value>Selecciona el estado:</option>}
+      option
+    </select>
+  </fieldset>
+  <fieldset class="form-group">
+    <span>Agregar a otros municipios?</span>
+    <label ng-repeat="mun in municipios">
+      <input type="checkbox"
+                  name="selectedMun[]"
+                  value="{{mun.nombre}}"
+                  ng-click="toggleMunSelection(mun.nombre)"> {{mun.nombre}}
+    </label>
+  </fieldset>
+  <fieldset class="form-group">
+    <input type="submit" class="btn btn-primary pull-right" value="Agregar" />
+  </fieldset>
+
+</form>
+
