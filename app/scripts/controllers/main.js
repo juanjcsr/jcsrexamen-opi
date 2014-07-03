@@ -20,6 +20,10 @@
     $scope.usuarios = Usuario.query();
     $scope.CurrentUser = CurrentUser;
 
+    $scope.signOut = function(){
+      $scope.CurrentUser.rol = '';
+    };
+
     $scope.login = function(currentuser){
       $scope.CurrentUser = currentuser;
       $scope.authenticated = false;
@@ -42,7 +46,7 @@
   appControllers.controller('ActivityController', ['$scope','CurrentUser','$http','ActivityArray', function($scope, CurrentUser, $http, ActivityArray){
     $scope.CurrentUser = CurrentUser;
     $scope.ActivityArray = ActivityArray;
-
+    $scope.municipios = [];
     $http.get('scripts/modelos/municipios.json').success(function(data) {
         $scope.municipios = data;
         //Igual que con el CurrentUser, debe haber una forma mas limpia de llenar
