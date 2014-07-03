@@ -38,9 +38,5 @@
   "scripts": {
     "test": "grunt test",
     "postinstall": "bower install"
-  },
-  "devDependencies": {
-    "grunt-protractor-runner": "^1.0.0",
-    "protractor": "^1.0.0-rc2"
   }
 }
