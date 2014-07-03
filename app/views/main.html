@@ -7,25 +7,15 @@
   <p><a class="btn btn-lg btn-success" ng-href="#">Splendid!<span class="glyphicon glyphicon-ok"></span></a></p>
 </div>
 
-<div class="row marketing">
-  <h4>HTML5 Boilerplate</h4>
-  <p>
-    HTML5 Boilerplate is a professional front-end template for building fast, robust, and adaptable web apps or sites.
-  </p>
+<div class="row marketing" ng-show="!authenticated">
+  <form name="usuarioLogin" ng-submit="login(CurrentUser)" novalidate>
+    <label for="username"></label>
+    <input type="text" name="username" placeholder="Nombre de usuario" ng-model="CurrentUser.username">
 
-  <h4>{{"Angular"}}</h4>
-  <p>
-    AngularJS is a toolset for building the framework most suited to your application development.
-  </p>
+    <label for="password"></label>
+    <input type="text" name="password" placeholder="Password" ng-model="CurrentUser.password">
 
-  <h4>Karma</h4>
-  <p>Spectacular Test Runner for JavaScript.</p>
+    <button type="submit">Iniciar Sesion</button>
 
-  <div>
-    <ul>
-      <li ng-repeat="cosa in usuarios">
-        <p>{{cosa.username}}</p>
-      </li>
-    </ul>
-  </div>
+  </form>
 </div>

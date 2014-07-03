@@ -33,8 +33,9 @@
 
       <div ng-include="'views/main.html'" ng-controller="MainCtrl"></div>
 
-      <div class="footer">
+      <div class="footer" ng-controller="UserController">
         <p><span class="glyphicon glyphicon-heart"></span> from the Yeoman team</p>
+        <p><span>{{CurrentUser}}</span></p>
       </div>
     </div>
 

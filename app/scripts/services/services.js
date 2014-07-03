@@ -12,4 +12,12 @@
       });
     }]);
 
+  examenServicios.factory('CurrentUser', function() {
+    return {
+      username: '',
+      password: '',
+      rol: ''
+    };
+  });
+
 }());
