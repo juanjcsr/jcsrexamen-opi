@@ -1,0 +1,71 @@
+[
+    {
+      "nombre": "Lerma",
+      "ubicacion": {
+        "latitud": -19.999,
+        "longitud": 92.9559
+      },
+      "actividades": [
+        {
+          "estado": "PROCESO",
+          "monto": 9999,
+          "descripcion": "Soy una actividad",
+          "id": 1
+        },
+        {
+          "estado": "AUTORIZADO",
+          "monto": 9999,
+          "descripcion": "Soy una actividad 2",
+          "id": 2
+        }
+      ]
+    },
+    {
+      "nombre": "Puebla",
+      "ubicacion": {
+        "latitud": -18.999,
+        "longitud": 95.9559
+      },
+      "actividades": [
+        {
+          "estado": "PROCESO",
+          "monto": 99,
+          "descripcion": "Soy una actividad 3",
+          "id": 3
+        },
+        {
+          "estado": "AUTORIZADO",
+          "monto": 11,
+          "descripcion": "Soy una actividad 4",
+          "id": 4
+        }
+      ]
+    },
+    {
+      "nombre": "Pachuva",
+      "ubicacion": {
+        "latitud": -18.999,
+        "longitud": 95.9559
+      },
+      "actividades": [
+        {
+          "estado": "PROCESO",
+          "monto": 99,
+          "descripcion": "Soy una actividad 3",
+          "id": 5
+        },
+        {
+          "estado": "AUTORIZADO",
+          "monto": 11,
+          "descripcion": "Soy una actividad 4",
+          "id": 6
+        },
+        {
+          "estado": "AUTORIZADO",
+          "monto": 11,
+          "descripcion": "Soy una actividad 4",
+          "id": 7
+        }
+      ]
+    }
+  ]
