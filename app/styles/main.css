@@ -77,3 +77,9 @@ body {
     border-bottom: 0;
   }
 }
+
+.municipio-card{
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  border-radius: 10px;
+}

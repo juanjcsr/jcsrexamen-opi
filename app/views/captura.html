@@ -1,7 +1,10 @@
-<div class="list-group">
-  asfasdf
-  <div class="list-item" ng-repeat="municipio in municipios">
-    <h3>{{municipio.nombre}}</h3>
-    <municipio-tabs></municipio-tabs>
+<!-- Vista de municipios y actividades-->
+<div class="municipios">
+  <h1>Municipios y Actividades</h1>
+  <div class="municipio-card" ng-repeat="municipio in municipios">
+    <h3 class="municipio-title">{{municipio.nombre}}</h3>
+    <!-- Tabs de actividades y ubicacion -->
+    <municipio-tabs class="lista-actividades"></municipio-tabs>
+    <hr>
   </div>
 </div>

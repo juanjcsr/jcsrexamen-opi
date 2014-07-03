@@ -1,3 +1,4 @@
+<!-- Login Page-->
 <div class="jumbotron" ng-show="!CurrentUser.rol">
   <div class="row marketing">
     <form name="usuarioLogin" ng-submit="login(CurrentUser)" novalidate>
@@ -5,7 +6,7 @@
       <input type="text" name="username" placeholder="Nombre de usuario" ng-model="CurrentUser.username">
 
       <label for="password"></label>
-      <input type="text" name="password" placeholder="Password" ng-model="CurrentUser.password">
+      <input type="password" name="password" placeholder="Password" ng-model="CurrentUser.password">
 
       <button type="submit" class="btn btn-lg btn-success">Iniciar Sesion</button>
 

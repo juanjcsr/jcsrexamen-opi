@@ -1,14 +1,25 @@
-<ul>
+<!--Lista de actividades -->
+<ul class="well">
   <h4>Actividades</h4>
   <li ng-repeat="actividad in municipio.actividades">
     <div class="actividad-container">
       <input type="checkbox" ng-model="actividad.estado" ng-true-value="AUTORIZADO" ng-false-value="PROCESO" ng-show="CurrentUser.rol=='autorizador'">
       <span>{{actividad.descripcion}} <em class="pull-right">{{actividad.monto | currency}}</em></span>
-      <strong>{{actividad.estado}}</strong>
+      <strong>---- en {{actividad.estado}}</strong>
     </div>
   </li>
 </ul>
+
+<!-- Forma para capturar nuevas actividades-->
 <form name="actividadesForm" ng-submit="submitActividad(municipio)" ng-show="CurrentUser.rol=='capturista'">
+<!-- Live Preview -->
+  <div class="actividad-container">
+    <span>{{newActividad.descripcion}} <em class="pull-right">{{newActividad.monto | currency}}</em></span>
+    <strong ng-show="newActividad.estado">---- en{{newActividad.estado}}</strong>
+  </div>
+
+  <!-- Seccion para nuevas actividades-->
+
   <h4>Agrega una actividad</h4>
   <fieldset class="form-group">
     <textarea placeholder="Descripcion de actividad" ng-model="newActividad.descripcion"></textarea>
@@ -22,6 +33,7 @@
       option
     </select>
   </fieldset>
+  <!-- TODO -->
   <fieldset class="form-group">
     <span>Agregar a otros municipios?</span>
     <label ng-repeat="mun in municipios">

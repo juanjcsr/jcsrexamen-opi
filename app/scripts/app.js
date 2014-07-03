@@ -6,7 +6,7 @@
    * @description
    * # examenApp
    *
-   * Main module of the application.
+   * Módulo principal
    */
   angular.module('examenApp', ['ngResource', 'ngRoute','examenAppControllers', 'examenServicios', 'examenDirectives'])
     .config(function($routeProvider) {

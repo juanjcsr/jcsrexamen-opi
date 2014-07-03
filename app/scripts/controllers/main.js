@@ -8,15 +8,10 @@
    * @name examenApp.controller:MainCtrl
    * @description
    * # MainCtrl
-   * Controller of the examenApp
+   * Controlador principal de la App
    */
   appControllers.controller('MainCtrl', ['$scope', 'Usuario', 'CurrentUser', function ($scope, Usuario, CurrentUser) {
     $scope.awesomeThings = ['Hola'];
-    /*$http.get('scripts/modelos/usuarios.json').success(function(data) {
-      console.log(data);
-      $scope.usuarios = data.usuarios;
-    });*/
-    //console.log(Usuario.query().usuarios);
     $scope.usuarios = Usuario.query();
     $scope.CurrentUser = CurrentUser;
 
@@ -43,10 +38,15 @@
 
   }]);
 
+  /**
+   * Controlador de Actividades,
+   */
   appControllers.controller('ActivityController', ['$scope','CurrentUser','$http','ActivityArray', function($scope, CurrentUser, $http, ActivityArray){
     $scope.CurrentUser = CurrentUser;
     $scope.ActivityArray = ActivityArray;
     $scope.municipios = [];
+
+    /*Obtiene los municipios y asigna las actividades*/
     $http.get('scripts/modelos/municipios.json').success(function(data) {
         $scope.municipios = data;
         //Igual que con el CurrentUser, debe haber una forma mas limpia de llenar
@@ -57,19 +57,12 @@
     $scope.newActividad = {};
     $scope.selectedMunicipios = {};
 
-    /*$scope.toggleMunSelection = function(nombre){
-
-    };*/
-
-    $scope.checarValores=function(){
-      console.log('$scope.ActivityArray.actividades');
-      console.log($scope.ActivityArray.actividades);
-    };
-
+    /*Selecciona las actividades en un checkbox*/
     $scope.selectActivities = function(actividad){
       $scope.selectedActivities.push(actividad);
     };
 
+    /*Actualiza las actividades y la agrega al municipio seleccionado*/
     $scope.submitActividad = function(municipio){
       $scope.ActivityArray.actividades.push($scope.newActividad);
       municipio.actividades.push($scope.newActividad);
@@ -93,6 +86,7 @@
     };
   });
 
+  /*Controla la sesión del usuario*/
   appControllers.controller('UserController', ['$scope','CurrentUser', function($scope,CurrentUser) {
     $scope.CurrentUser = CurrentUser;
 

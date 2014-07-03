@@ -1,16 +1,20 @@
+<!-- Tabs del municipio-->
 <section>
-      <ul class="nav nav-pills">
-        <li ng-class="{active:tab.isSet(1)}">
-          <a href ng-click="tab.setTab(1)">Ubicacioon</a>
-        </li>
-        <li ng-class="{active:tab.isSet(2)}">
-          <a href ng-click="tab.setTab(2)">Actividades</a>
-        </li>
-      </ul>
-      <div ng-show='tab.isSet(1)'>
-        {{municipio.ubicacion}}
-      </div>
-      <div ng-show='tab.isSet(2)'>
-        <actividades-tab></actividades-tab>
-      </div>
-    </section>
+    <ul class="nav nav-pills">
+      <li ng-class="{active:tab.isSet(1)}">
+        <a href ng-click="tab.setTab(1)">Actividades</a>
+      </li>
+      <li ng-class="{active:tab.isSet(2)}">
+        <a href ng-click="tab.setTab(2)">Ubicación</a>
+      </li>
+    </ul>
+    <!-- Lista de actividades -->
+    <div ng-show='tab.isSet(1)'>
+      <actividades-tab></actividades-tab>
+    </div>
+    <!-- Mapa y ubicacion-->
+    <div ng-show='tab.isSet(2)'>
+      <span>Aquí iría un mapa con la ubicación</span>
+      {{municipio.ubicacion}}
+    </div>
+  </section>
